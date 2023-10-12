@@ -1,6 +1,9 @@
 import React from "react";
 import useCart from "../../store/useProducts";
 import useUserLogin from "../../store/useUserLogin";
+import { Link } from "react-router-dom";
+import "./style.css";
+
 const ProductCard = ({ product }) => {
   const { addProduct } = useCart();
   const { user } = useUserLogin();
@@ -11,14 +14,18 @@ const ProductCard = ({ product }) => {
   const renderActionButton = () => {
     if (user.isAdmin === true) {
       // Usuario admin, mostrar el botón de editar
-      return <button>Editar</button>;
+      return (
+       <Link to={`/editar/${product.id}`}>      
+       <button>Editar</button>;
+       </Link> 
+      )
     } else {
       // Usuario cliente, mostrar el botón de agregar al carrito
       return <button onClick={handleAddCart}>Agregar al carrito</button>;
     }
   };
   return (
-    <div>
+    <div className="card">
       <img alt={product.Url} src={product.Url} />
       <h2>{product.Nombre}</h2>
       <p>Price: ${product.Price}</p>
@@ -30,7 +37,7 @@ const ProductCard = ({ product }) => {
 };
 const ProductGrid = ({ products }) => {
   return (
-    <div>
+    <div className="product-card-container">
       {products.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}

@@ -1,0 +1,112 @@
+/* Login */
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: #fff;
+  text-align: center;
+}
+
+.login-form {
+  background-color: #1b1b1b;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  text-align: center;
+}
+
+.login-container h1 {
+  font-size: 50px;
+  margin-bottom: 40px;
+}
+
+.login-form input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+.login-form button {
+  border-radius: 20px;
+  border: none;
+  outline: 0;
+  margin-top: 30px;
+  padding: 10px;
+  color: white;
+  background-color: #1bcb7f;
+  text-align: center;
+  cursor: pointer;
+  width: 50%;
+  font-size: 15px;
+}
+
+/* Cart */
+
+a {
+  text-decoration: none;
+}
+
+.cartContent {
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  margin: 30px;
+  align-items: center;
+  padding: 20px;
+}
+
+.button {
+  border-radius: 20px;
+  border: none;
+  outline: 0;
+  margin-top: 30px;
+  padding: 10px;
+  color: white;
+  background-color: #1bcb7f;
+  text-align: center;
+  cursor: pointer;
+  width: 20%;
+  font-size: 15px;
+}
+
+/* Actualizar producto */
+
+.login-container input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+/* orders */
+
+.ButtonOrder {
+  border-radius: 20px;
+  border: none;
+  outline: 0;
+  margin-top: 30px;
+  padding: 10px;
+  color: white;
+  background-color: #1bcb7f;
+  text-align: center;
+  cursor: pointer;
+  width: 20%;
+  font-size: 15px;
+}
+
+.inputOrder {
+  width: 50%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}

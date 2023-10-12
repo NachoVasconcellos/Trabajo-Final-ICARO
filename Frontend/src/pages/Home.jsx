@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import useCheckLogin from "../hooks/useCheckLogin";
 import ProductGrid from "../components/product/ProductGrid";
 import useUserLogin from "../store/useUserLogin";
+import Navbar from "../components/NavBar/NavBar";
+import Banner from "../components/Banner/Banner";
+import Footer from "../components/Footer/Footer";
 function Home() {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -28,7 +31,8 @@ function Home() {
   }, [searchTerm]);
   return (
     <>
-      <h1>React App</h1>
+      <Navbar/>
+      <Banner/>
       <input
         type="text"
         placeholder="Search"
@@ -38,6 +42,7 @@ function Home() {
       {filteredProducts ? (
         <ProductGrid products={filteredProducts} isLogged={isLogged} />
       ) : null}
+      <Footer/>
     </>
   );
 }

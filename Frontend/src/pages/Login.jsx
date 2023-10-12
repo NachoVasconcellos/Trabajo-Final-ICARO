@@ -73,6 +73,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useUserLogin from "../store/useUserLogin";
+import "./style.css";
+
+
 function Login() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -109,8 +112,9 @@ function Login() {
     setLoading(false);
   };
   return (
-    <div>
-      <form onSubmit={onFinish}>
+    <div className="login-container">
+      <h1>Login</h1>
+      <form className="login-form" onSubmit={onFinish}>
         <input
           type="email"
           name="Email"
@@ -140,5 +144,6 @@ function Login() {
       </form>
     </div>
   );
+  
 }
 export default Login;

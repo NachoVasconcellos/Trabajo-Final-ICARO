@@ -2,6 +2,7 @@ const express = require('express');
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
 const morgan = require('morgan');
+const cors = require("cors");
 
 const app = express()
 const port = 3000
@@ -11,6 +12,7 @@ app.use(express.static("public"));
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 app.use(
   session({
     secret: "12345",
