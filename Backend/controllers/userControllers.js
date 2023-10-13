@@ -32,7 +32,15 @@ const login = async (req, res) => {
     }
     res.status(200).json({
       message: "Inicio de sesión exitoso",
-      data: { Email: user.Email, Telephone: user.Telephone, Name: user.Name, Surname: user.Surname, Address: user.Address, Id: user.id, isAdmin: user.isAdmin },
+      data: {
+        Email: user.Email,
+        Telephone: user.Telephone,
+        Name: user.Name,
+        Surname: user.Surname,
+        Address: user.Address,
+        Id: user.id,
+        isAdmin: user.isAdmin,
+      },
     });
   });
 };

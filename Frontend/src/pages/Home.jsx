@@ -1,17 +1,21 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import useCheckLogin from "../hooks/useCheckLogin";
 import ProductGrid from "../components/product/ProductGrid";
 import useUserLogin from "../store/useUserLogin";
 import Navbar from "../components/NavBar/NavBar";
 import Banner from "../components/Banner/Banner";
 import Footer from "../components/Footer/Footer";
-function Home() {
+import ButtonCreateProduct from "../components/product/ButtonCreateProduct";
+
+const Home = () => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const { isLogged } = useUserLogin();
+  const { user } = useUserLogin();
   useCheckLogin();
+
   useEffect(() => {
+    console.log(user)
     fetch("/api/productos")
       .then((response) => response.json())
       .then((data) => {
@@ -19,31 +23,43 @@ function Home() {
         setFilteredProducts(data.data);
       });
   }, []);
+
   useEffect(() => {
     if (searchTerm === "") {
       setFilteredProducts(products);
       return;
     }
+
     const filteredProducts = products.filter((product) =>
-      product.Album.toLowerCase().includes(searchTerm.toLowerCase())
+      product.Nombre.toLowerCase().includes(searchTerm.toLowerCase())
     );
+
     setFilteredProducts(filteredProducts);
   }, [searchTerm]);
+
   return (
     <>
-      <Navbar/>
-      <Banner/>
-      <input
-        type="text"
-        placeholder="Search"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
-      {filteredProducts ? (
+      <Navbar />
+      <Banner />
+
+      <div className="divSearch">
+        <input
+          type="text"
+          placeholder="Busca tu producto"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        <button>Buscar</button>
+      </div>
+      {user.isAdmin && <ButtonCreateProduct />}
+      {/* {filteredProducts ? (
         <ProductGrid products={filteredProducts} isLogged={isLogged} />
       ) : null}
-      <Footer/>
+      {isLogged.rol === "admin" && <ButtonCreateProduct />} */}
+      {filteredProducts ? <ProductGrid products={filteredProducts} /> : null}
+      <Footer />
     </>
   );
-}
+};
+
 export default Home;

@@ -16,7 +16,7 @@ const ProductCard = ({ product }) => {
       // Usuario admin, mostrar el botón de editar
       return (
        <Link to={`/editar/${product.id}`}>      
-       <button>Editar</button>;
+       <button>Editar</button>
        </Link> 
       )
     } else {

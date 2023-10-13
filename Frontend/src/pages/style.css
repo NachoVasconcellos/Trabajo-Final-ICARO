@@ -110,3 +110,41 @@ a {
   border: 1px solid #ccc;
   border-radius: 20px;
 }
+
+.inputSearch {
+  width: 90%;
+  padding: 10px;
+  margin: 30px 0;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+.divSearch {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: space;
+}
+
+.divSearch input {
+  width: 60%;
+  padding: 10px;
+  margin: 30px 0;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+.divSearch button {
+  width: 10%;
+  padding: 10px;
+  margin: 30px 0;
+  border-radius: 20px;
+  border: none;
+  outline: 0;
+  margin-top: 30px;
+  color: white;
+  background-color: #1bcb7f;
+  text-align: center;
+  cursor: pointer;
+  font-size: 15px;
+}

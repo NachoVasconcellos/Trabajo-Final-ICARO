@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
+import Navbar from "../components/NavBar/NavBar";
+import Footer from "../components/Footer/Footer";
 
 const EditProducts = () => {
   const [product, setProduct] = useState({
@@ -20,11 +22,6 @@ const EditProducts = () => {
     setProduct((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-//   const handleChange = (e) => {
-//     const { name, value } = e.target;
-//     setProducto({ ...producto, [name]: value });
-//   };
-
   const handleClick = async (e) => {
     e.preventDefault();
     try {
@@ -36,6 +33,9 @@ const EditProducts = () => {
   };
   console.log(product);
   return (
+
+    <>
+    <Navbar/>
     <div className="login-container">
       <h2>Actualizar Producto</h2>
       <form className="login-form" action="">
@@ -69,6 +69,8 @@ const EditProducts = () => {
       </button>
       </form>
     </div>
+    <Footer/>
+    </>
   );
 };
 

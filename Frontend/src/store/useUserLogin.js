@@ -9,18 +9,18 @@
 //       // isAdmin: false,
 //       setIsLogged: (isLogged) => set(() => ({ isLogged: isLogged })),
 //       setUser: (user) =>
-//         set((state) => ({
+//         set(() => ({
 //           user: {
-//             data: {
-//               ...state.user.data,
-//               Id: user.data.id,
-//               Name: user.data.Name,
-//               Surname: user.data.Surname,
-//               Email: user.data.Email,
-//               Address: user.data.Address,
-//               Telephone: user.data.Telephone,
-//               isAdmin: user.data.isAdmin,
-//             },
+//             // data: {
+//             //   ...state.user.data,
+//             //   Id: user.data.id,
+//             //   Name: user.data.Name,
+//             //   Surname: user.data.Surname,
+//             //   Email: user.data.Email,
+//             //   Address: user.data.Address,
+//             //   Telephone: user.data.Telephone,
+//             //   isAdmin: user.data.isAdmin,
+//             // },
 //           },
 //         })),
 //     }),
